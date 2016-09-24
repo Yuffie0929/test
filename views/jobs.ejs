@@ -1,0 +1,54 @@
+<%- include header.ejs -%>
+
+
+
+<!--主体-->
+<div id="wrapper">
+
+    <!--表格头-->
+    <div id="tableHeader">
+        <table width="100%"  style="table-layout:fixed;background:#fff;">
+            <tr>
+                <th title="job_id">工种ID</th>
+                <th title="job_title">工种名</th>
+                <th title="min_salary">最低工资</th>
+                <th title="max_salary">最高工资</th>
+            </tr>
+        </table>
+    </div>
+
+    <!--表格体-->
+    <div id="itemList" >
+        <table id="tableList" width="100%" style="table-layout:fixed">
+            <tbody>
+            <%
+                var objTemp = null;
+                for(var i=0; i<jobs.length; i++ ){
+                    objTemp = jobs[i];
+                    //显示一个tr
+            %>
+                <tr>
+                    <td ><%= objTemp.job_id %></td>
+                    <td ><%= objTemp.job_title %></td>
+                    <td ><%= objTemp.min_salary %></td>
+                    <td ><%= objTemp.max_salary %></td>
+                </tr>
+            <%
+                }
+            %>
+            </tbody>
+        </table>
+    </div>
+    <div id="footarea">
+        <!--占位-->
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<%- include footer.ejs -%>

@@ -1,0 +1,23 @@
+<%- include head.ejs -%>
+
+<body style="background-color: #f1f1f1">
+<div id="login" class="login clear">
+    <div class="login-logo">
+        <img src="images/login.gif" alt="">
+    </div>
+    <form method="post" action="/login">
+        <label for="userName">Username:</label><br>
+        <input type="text" id="userName" name="userName" ><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" ><br>
+        <label for="rememberme"></label><br>
+        <input class="rememberme" type="checkbox" id="rememberme" name="remeberme">
+        <p>Remember Me</p>
+        <input class="login-submit" type="submit" value="Log In">
+    </form>
+    <a href="/">
+        <p class="login-back">← Back to Pasion International Trading</p>
+    </a>
+</div>
+</body>
+</html>

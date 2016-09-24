@@ -1,0 +1,24 @@
+{
+  "_id" : ObjectId("578e29c734b0caf40d5c0b80"),
+  "musicName" : "Rosas",
+  "singer" : "La Oreja De Van Gogh",
+  "__v" : 0
+},
+{
+  "_id" : ObjectId("578e2a67432572902a2d75f5"),
+  "musicName" : "Mean Ol’ Moon (《泰迪熊》电影插曲)",
+  "singer" : "Amanda Seyfried",
+  "__v" : 0
+},
+{
+  "_id" : ObjectId("578e3054da5d5cd42f1f6c16"),
+  "musicName" : "The Mass",
+  "singer" : "Eric Levi",
+  "__v" : 0
+},
+{
+  "_id" : ObjectId("578e307e84ac1b182e1a62e6"),
+  "musicName" : "リンゴ日和 ～The Wolf Whistling Sond (苹果的日常～The Wolf Whistling Sond)",
+  "singer" : "Rocky Chack",
+  "__v" : 0
+}

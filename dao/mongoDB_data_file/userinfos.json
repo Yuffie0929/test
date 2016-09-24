@@ -1,0 +1,62 @@
+{
+  "_id" : ObjectId("578b3ea960fba5480422c2bf"),
+  "userName" : "122",
+  "password" : "c81e728d9d4c2f636f067f89cc14862c",
+  "level" : 1,
+  "__v" : 0
+},
+{
+  "_id" : ObjectId("578b3eb860fba5480422c2c0"),
+  "userName" : "3",
+  "password" : "c81e728d9d4c2f636f067f89cc14862c",
+  "level" : 1,
+  "__v" : 0
+},
+{
+  "_id" : ObjectId("578b3f51416561684b83618f"),
+  "userName" : "2",
+  "password" : "c81e728d9d4c2f636f067f89cc14862c",
+  "level" : 1,
+  "__v" : 0
+},
+{
+  "_id" : ObjectId("578b3de560fba5480422c2bd"),
+  "userName" : "yuffie",
+  "password" : "81dc9bdb52d04dc20036dbd8313ed055",
+  "level" : 9.0,
+  "__v" : 0,
+  "avatar" : "uploaded",
+  "avatarFileName" : "yuffie",
+  "aboutme" : "谜",
+  "city" : "北京",
+  "gender" : 2,
+  "nickname" : "yuffie"
+},
+{
+  "_id" : ObjectId("57a1fa77c522c6f49db239c7"),
+  "userName" : "123",
+  "password" : "202cb962ac59075b964b07152d234b70",
+  "level" : 1,
+  "__v" : 0
+},
+{
+  "_id" : ObjectId("57a1fca1fa93b7d84d56970e"),
+  "userName" : "4",
+  "password" : "a87ff679a2f3e71d9181a67b7542122c",
+  "gender" : 0,
+  "level" : 1,
+  "__v" : 0,
+  "avatar" : "uploaded",
+  "avatarFileName" : "4"
+},
+{
+  "_id" : ObjectId("578b3e9760fba5480422c2be"),
+  "userName" : "1",
+  "password" : "c4ca4238a0b923820dcc509a6f75849b",
+  "level" : 1,
+  "__v" : 0,
+  "aboutme" : "11111",
+  "city" : "请输入您所在的城市",
+  "gender" : 1,
+  "nickname" : "1"
+}

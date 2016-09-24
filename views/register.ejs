@@ -1,0 +1,22 @@
+<%- include head.ejs -%>
+
+<body  style="background-color: #f1f1f1">
+<div id="register" class="login clear">
+    <div class="login-logo">
+        <img src="images/register.gif" alt="">
+    </div>
+    <form method="post" action="/register">
+        <label for="userName">Username:</label>
+        <input type="text" id="userName" name="userName" ><br>
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" ><br>
+        <label for="confirmPassword">Confirm :</label>
+        <input type="text" id="confirmPassword" name="confirmPassword" ><br>
+        <input type="submit" value="Register" class="login-submit">
+    </form>
+    <a href="/">
+        <p class="login-back">← Back to Pasion International Trading</p>
+    </a>
+</div>
+</body>
+</html>

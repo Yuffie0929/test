@@ -1,0 +1,99 @@
+<%- include header_narrow.ejs -%>
+
+<div class="setting-cont clear">
+    <div class="setting-list">
+        <ul class="setting-list-box">
+            <li class="setting-list-li setting-list-active" id="setProfile">
+                <a href="javascript:">个人资料</a>
+            </li>
+            <li class="setting-list-li" id="setAvatar">
+                <a href="javascript:">头像设置</a>
+            </li>
+            <li class="setting-list-li">
+                <a href="javascript:">手机设置</a>
+            </li>
+            <li class="setting-list-li">
+                <a href="javascript:">邮箱验证</a>
+            </li>
+            <li class="setting-list-li">
+                <a href="javascript:">修改密码</a>
+            </li>
+        </ul>
+    </div>
+    <div class="setting-right">
+        <div class="setAvatar clear">
+            <img class="oldAvatar" src="<%= uInfo.avatarFileName? 'avatars/'+ uInfo.avatarFileName:'avatars/head_icon.jpg' %>" alt="">
+            <form method="post" action="/setAvatar" id="avatarUP" enctype="multipart/form-data">
+                <a class="setAvatarA" href="javascript:void(0);">上传头像</a>
+                <input class="setAvatarBtn" type="file" value="上传头像" name="avatar" id="avatarFile">
+                <input class="setAvatarBtnSubmit" type="submit" id="submit"  value="提交头像" >
+            </form>
+        </div>
+
+
+        <div class="setProfile clear">
+            <form method="post" action="/setProfile" id="settingProfile">
+                <div class="clear">
+                    <label class="label-name" for="profile-nickname">昵称：</label>
+                    <div class="profile-group">
+                        <input type="text" name="nickname" id="profile-nickname" autocomplete="off" value="<%= uInfo.nickname?uInfo.nickname:uInfo.userName %>" placeholder="请输入昵称.">
+                    </div>
+                </div>
+                <div class="clear">
+                    <label class="label-name" for="profile-city">城市：</label>
+                    <div class="profile-group">
+                        <input class="input-city" type="text" name="city"  id="profile-city" value="<%= uInfo.city?uInfo.city:'请输入您所在的城市' %>" placeholder="请输入您所在的城市.">
+                    </div>
+                </div>
+                <div class="clear">
+                    <label class="label-name">性别：</label>
+                    <div class="profile-group profile-group-gender">
+                        <label class="profile-gender">
+                            <input class="profile-gender" type="radio" name="gender" value="0">
+                            保密
+                        </label>
+                        <label class="profile-gender">
+                            <input class="profile-gender" type="radio" name="gender" value="1">
+                            男
+                        </label>
+                        <label class="profile-gender">
+                            <input class="profile-gender" type="radio" name="gender" value="2">
+                            女
+                        </label>
+                    </div>
+                    <div class="clear">
+                        <label class="label-name" for="profile-aboutMe">个性签名：</label>
+                        <div class="profile-group">
+                            <textarea name="aboutme" id="profile-aboutMe" cols="30" rows="5"><%= uInfo.aboutme?uInfo.aboutme:''%></textarea>
+                        </div>
+                    </div>
+                </div>
+                <input class="setProfileBtnSubmit" type="submit" id="submit"  value="保存" >
+            </form>
+        </div>
+    </div>
+    <script>
+        var setProfile = document.querySelector('#setProfile');
+        var setAvatar = document.querySelector('#setAvatar');
+
+        var setProfilePage = document.querySelector('.setProfile');
+        var setAvatarPage = document.querySelector('.setAvatar');
+
+        var setUserInfoBtns = [setProfile, setAvatar];
+        var setPages = [setProfilePage, setAvatarPage];
+
+        for (var i = 0; i<setUserInfoBtns.length; i++){
+            setUserInfoBtns[i].index = i;
+            setUserInfoBtns[i].onclick = function(){
+                for(var j = 0; j<setUserInfoBtns.length; j++){
+                    setUserInfoBtns[j].classList.remove('setting-list-active');
+                    setPages[j].style.display = 'none';
+                }
+                setPages[this.index].style.display = 'block';
+                this.classList.add('setting-list-active');
+            }
+        }
+    </script>
+</div>
+
+<%- include footer.ejs -%>

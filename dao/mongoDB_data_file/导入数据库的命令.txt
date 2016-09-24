@@ -1,0 +1,2 @@
+mongoimport --db pasion --collection userinfos --drop --file userinfos.json
+mongoimport --db pasion --collection music_lists --drop --file music_lists.json

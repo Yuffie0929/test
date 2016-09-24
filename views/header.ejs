@@ -1,0 +1,139 @@
+
+<header id="header" class="header clear wrapper">
+    <div>
+        <a href="http://www.pasionbj.com/">
+            <img class="header-logo" src="images/logo.png" alt="">
+        </a>
+    </div>
+
+    <div class="header-nav">
+        <div class="header-QRicon left">
+            <a href="Javascript:">
+                <img src="images/QRcode.png" alt="">
+            </a>
+            <div class="header-QR">
+                <h2>敬请关注</h2>
+                <p>派迅酒业订阅号</p>
+                <img src="images/QRcode_250.jpg" alt="">
+            </div>
+        </div>
+
+
+        <!--检测用户是否是登录状态-->
+        <% if (uInfo) { %>
+        <div class="userInfo left">
+        <div>
+                <img class="avatarIcon" src="<%= uInfo.avatarFileName? 'avatars/'+ uInfo.avatarFileName:'avatars/head_icon.jpg' %>" alt="">
+    </div>
+    <div class="userInfoList">
+        <div class="changeUserInfo">
+            <a href="/setUserInfo">账号管理</a>
+        </div>
+        <div class="userInfoList-top">
+            <a href="/setUserInfo">
+                <img class="bigAvatarIcon" src="<%= uInfo.avatarFileName? 'avatars/'+ uInfo.avatarFileName:'avatars/head_icon.jpg' %>" alt="">
+            </a>
+            <% if(uInfo.level == 9) { %>
+                    <span><%='欢迎主人，'+ uInfo.userName %></span>
+                    <span><%='Lv.'+ uInfo.level %></span>
+                </div>
+                <ul class="clear">
+                    <li>
+                        <a href="#">仆人管理</a>
+                    </li>
+                    <li>
+                        <a href="#">客人管理</a>
+                    </li>
+                    <li>
+                        <a href="#">订单管理</a>
+                    </li>
+                    <li>
+                        <a href="#">红酒管理</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-logout left">
+            <a href="/logout">登出</a>
+        </div>
+        <%   }else if(uInfo.level == 7){ %>
+                    <span><%='欢迎，'+ uInfo.userName %></span>
+                    <span><%='Lv.'+ uInfo.level %></span>
+                </div>
+                <ul class="clear">
+                    <li>
+                        <a href="#">仆人管理</a>
+                    </li>
+                    <li>
+                        <a href="#">客人管理</a>
+                    </li>
+                    <li>
+                        <a href="#">订单管理</a>
+                    </li>
+                    <li>
+                        <a href="#">红酒管理</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-logout left">
+            <a href="/logout">登出</a>
+        </div>
+        <%   }else if(uInfo.level == 1){ %>
+
+                    <span><%='欢迎，'+ uInfo.userName %></span>
+                    <span><%='Lv.'+ uInfo.level %></span>
+                </div>
+                <ul class="clear">
+                    <li>
+                        <a href="#">我的订单</a>
+                    </li>
+                    <li>
+                        <a href="#">购物车</a>
+                    </li>
+                    <li>
+                        <a href="#">我的收藏</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-logout left">
+            <a href="/logout">登出</a>
+        </div>
+        <%    }
+        }else{ %>
+        <div class="header-register left">
+            <a href="/register">注册</a>
+        </div>
+        <div class="header-login left">
+            <a href="/login">登录</a>
+        </div>
+        <%} %>
+    </div>
+</header>
+<nav id="nav" class="nav">
+    <div class="wrapper clear">
+        <ul class="nav-list clear">
+            <li class="nav-option">
+                <a href="/">首页</a>
+            </li>
+            <li class="nav-option">
+                <a href="javascript:">活动商品</a>
+            </li>
+            <li class="nav-option">
+                <a href="javascript:">优秀产区</a>
+            </li>
+            <li class="nav-option">
+                <a href="javascript:">名酒名庄</a>
+            </li>
+            <li class="nav-option">
+                <a href="javascript:">葡萄酒文化</a>
+            </li>
+            <li class="nav-option">
+                <a href="javascript:">关于我们</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+

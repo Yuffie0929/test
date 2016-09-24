@@ -1,0 +1,120 @@
+<div class="rightBar-content-music">
+    <div class="musicPlayer">
+        <canvas id="musicCanvas" width="235px" height="160">
+            您的浏览器不支持Canvas
+        </canvas>
+        <div class="musicProgress">
+            <canvas id="musicProgressCanvas" width="104px" height="104px">
+                您的浏览器不支持Canvas
+            </canvas>
+        </div>
+        <div class="musicPrev">
+            <canvas id="musicPrevCanvas"  width="14px" height="12px">
+                您的浏览器不支持Canvas
+            </canvas>
+        </div>
+        <div class="musicPlay">
+            <canvas id="musicPlayCanvas" width="16px" height="16px">
+                您的浏览器不支持Canvas
+            </canvas>
+        </div>
+        <div class="musicNext">
+            <canvas id="musicNextCanvas" width="14px" height="12px">
+                您的浏览器不支持Canvas
+            </canvas>
+        </div>
+        <div class="musicPlayerDecoration">
+            <span id="duration"></span>
+            <span id="repeat">Repeat</span>
+            <span id="casual">Casual</span>
+        </div>
+    </div>
+    <div class="musicList">
+        <ul id="musicList">
+
+            <% //右边菜单栏 音乐列表逻辑
+            for(var i = 0; i< musicList.length;i++){
+                var musicName = musicList[i].musicName;
+                var singer = musicList[i].singer;
+                var musicID =musicList[i]._id;
+            %>
+            <li class="musicListLi">
+                <img class="musicImg" alt="" src=<%='images/musics/'+musicID+'.jpg' %> >
+                <div class="musicInfo">
+                    <p class="musicName"><%= musicName %></p>
+                    <p class="singer"><%= singer %></p>
+                </div>
+                <a id="musicBtn" href="javascript:">
+                    <img class="musicBtn" src="images/musics/music_play_128px.png" alt="">
+                </a>
+            </li>
+            <%}%>
+        </ul>
+    </div>
+    <audio id="audio" src="media/With_An_Orchid_Yanni.mp3" controls preload="metadata"></audio>
+</div>
+
+<script src="javascripts/right_bar_music.js" type="text/javascript"></script>
+<script>
+    window.onload = function(){
+        var json = '<%- JSON.stringify(musicList) %>';
+        var music = JSON.parse(json);
+
+        var audio = document.querySelector('#audio');
+        var num = 0;
+        var musicNum = 0;
+        var musicListLi = document.querySelectorAll('.musicListLi');
+        for ( var i = 0; i<musicListLi.length; i++){
+            var musicBtn = musicListLi[i].querySelector('#musicBtn');
+            musicBtn.index = i;
+            musicBtn.onclick = function(){
+                num = musicNum;
+                musicNum = this.index;
+                play(num);
+            };
+        }
+        audio.src = 'media/' + music[musicNum]._id + '.mp3';
+        var musicPrevBtn = document.querySelector('.musicPrev');
+        var musicNextBtn = document.querySelector('.musicNext');
+        musicPrevBtn.onclick = function(){
+            if(musicNum == 0){
+                num = musicNum;
+                musicNum = music.length-1;
+                play(num);
+            }else {
+                num = musicNum;
+                musicNum--;
+                play(num);
+            }
+        };
+        musicNextBtn.onclick = function(){
+            if(musicNum == music.length-1){
+                num = musicNum;
+                musicNum = 0;
+                play(num);
+            }else {
+                num = musicNum;
+                musicNum++;
+                play(num);
+            }
+        };
+
+
+        function play(num){
+            audio.src = 'media/' + music[musicNum]._id + '.mp3';
+            audio.play();
+            paintMusicPlay.clearRect(0, 0, 16, 16);
+            paintMusicPlay.fillRect(0, 0, 3, 16);
+            paintMusicPlay.fillRect(9, 0, 3, 16);
+            if(this.index){
+
+            }else {
+                console.log('no index');
+            }
+            musicListLi[num].classList.remove('musicSelect');
+            musicListLi[musicNum].classList.add('musicSelect');
+        }
+    }
+</script>
+
+

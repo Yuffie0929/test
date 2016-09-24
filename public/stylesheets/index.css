@@ -1,0 +1,97 @@
+/*公用样式*/
+body {font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;}
+a {color: #5e5e5e;}
+img{display: block;}
+
+/*header*/
+.header{}
+.header-logo{float: left;}
+
+.header-nav{float: right;font:14px 微软雅黑;color: #5e5e5e;}
+.header-nav > .left{float: left;margin: 33px 0;position: relative;}
+.header-QR{position: absolute;right:-50px;top:70px;z-index:5;background-color: #fff;text-align: center;width: 150px;font:14px 微软雅黑;display: none;}
+.header-QRicon{padding: 15px;}
+.header-QRicon:hover .header-QR{display: block;}
+.header-QR h2{font:14px 微软雅黑;}
+.header-QR p{font:bold 14px 微软雅黑;}
+.header-QR img{display: block;width: 150px;height: 150px;}
+
+.userInfo{position: relative;}
+.avatarIcon{display: block;width: 34px;height: 34px;border-radius: 50%;border: 2px solid transparent;margin: 8px;}
+.userInfo:hover .avatarIcon{border: 2px solid #a22125;}
+
+.userInfoList{position:absolute;z-index:5;display: none;background-color: #fff;width: 260px;right: -10px;top:54px;border: 1px solid #a22125;padding: 8px;}
+.userInfoList:before{content: '';border-top: 8px solid transparent;border-right: 8px solid transparent;border-bottom: 8px solid #a22125;border-left: 8px solid transparent;position: absolute;top:-16px;right: 28px;}
+.userInfo:hover .userInfoList{display: block}
+.userInfoList span{font:14px/80px 微软雅黑;vertical-align: top;margin-left: 10px;}
+
+.userInfoList-top{border-bottom: 1px solid #a22125;}
+.changeUserInfo{position: absolute;top:8px;right:8px;border-right: 2px solid #a22125;padding-right: 3px;color: #222;}
+.bigAvatarIcon{display: inline-block;width: 80px;height: 80px;border-radius: 50%;border: 2px solid transparent;}
+
+.userInfoList > ul{width: 100%;}
+.userInfoList > ul > li{float:left;width: 25%;margin: 2px 0;padding:2px;border-right: 1px solid #a22125;text-align: center;box-sizing: border-box;}
+.userInfoList > ul > li:nth-child(4n){border-right: 1px solid transparent;}
+
+.header-logout, .header-register, .header-login{padding: 15px;}
+
+/*nav*/
+.nav{background-color: #a22125;height: 36px;}
+.nav-list{font:16px/36px 微软雅黑;float:left;}
+.nav-option{float: left;padding: 0 30px;}
+.nav-option:nth-child(1){background-color: #c92e31;}
+.nav-option:hover{background-color: #c92e31;}
+.nav-option a{color:#fff;}
+
+
+/*banner*/
+.banner{overflow: hidden;}
+.banner-slide{display:flex;width: 600%;}
+.banner-slide li{flex:1;}
+.banner-slide img{display:block;width: 100%;}
+
+/*login register*/
+.login, .register{width: 320px;margin: 0 auto;background-color: #f1f1f1;}
+.login-logo > img{display: block;width: 100px;height: 100px;border-radius: 50%;padding: 50px 110px;}
+
+.login form{background-color: #fff;padding: 25px 25px 60px 25px; font-size:14px;font-family: "Open Sans",sans-serif;color: #777;}
+.rememberme{height: 25px;width: 25px;}
+.login form p{display:inline-block;content: 'Remember Me';color:#777;vertical-align: middle;cursor: pointer;font-size: 12px;line-height: 19px;margin-left: 5px;}
+.login-submit{float: right;border-radius: 3px;border: 1px solid #0074a2;color: #fff;background-color: #2ea2cc;padding: 6px 14px;line-height: normal;font-size: 14px;vertical-align: middle;height: auto;margin-bottom: 4px;-webkit-box-shadow: inset 0 1px 0 rgba(120,200,230,.5),0 1px 0 rgba(0,0,0,.15);box-shadow: inset 0 1px 0 rgba(120,200,230,.5),0 1px 0 rgba(0,0,0,.15);text-decoration: none;}
+.login-back{text-decoration: none;color: #999;font-size: 13px;font-family: "Open Sans",sans-serif;padding: 0 24px;margin: 24px 0 0;}
+
+
+
+
+/*右边栏*/
+.rightBar{position: fixed;z-index:10;right: -235px;transition:0.5s right ease;  }
+.rightBarOpen{right: 0;}
+.rightBar-List{float:left;width: 35px;background-color: #000;}
+.rightBar-Content{margin-left: 35px;}
+
+
+/*音乐播放器*/
+.musicPlayer{position: relative;width: 235px;background-color: #fff;}
+.musicPrev{position: absolute;top:57px;left:20px;cursor: pointer;}
+.musicPlay{position: absolute;top:55px;left:113px;cursor: pointer;}
+.musicProgress{position: absolute;top:11px;left:66px;}
+.musicNext{position: absolute;top:57px;right:20px;cursor: pointer;}
+
+.musicPlayerDecoration{}
+#duration{position: absolute;text-align:center;width:100px;margin:0 auto;top:77px;left:0;right:0;font:lighter 12px/12px Arial;color:#fff;}
+#repeat,#casual{position: absolute;top:100px;color: #ea5965;font:12px/12px Arial;}
+#repeat{left:10px;}
+#casual{right:10px;}
+
+
+.musicList{background-color: #fff;}
+.musicListLi{border-left: 4px solid transparent;height: 60px;}
+.musicListLi:hover{border-left: 4px solid #ea5965;height: 60px;}
+.musicSelect{border-left: 4px solid #ea5965;}
+.musicImg{float:left;width: 44px;height: 44px;padding: 8px 8px;border-radius: 50%;}
+.musicInfo{float:left;width:130px;padding: 12px 0;}
+.musicName{font:bold 12px/20px 微软雅黑;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.singer{width:130px;font:12px/12px 微软雅黑;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.musicBtn{float:right;width: 20px;height: 20px;padding: 20px 5px;}
+
+audio{display: none;}
